@@ -4,7 +4,7 @@ import glob
 
 import cv2
 
-from src_codes.Color_Histogram.ColorDescriptor import ColorDescriptor
+from Color_Histogram.ColorDescriptor import ColorDescriptor
 
 # # construct the argument parser and parse the arguments
 # ap = argparse.ArgumentParser()

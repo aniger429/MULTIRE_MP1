@@ -1,6 +1,6 @@
 # import the necessary packages
-from src_codes.Color_Histogram.ColorDescriptor import ColorDescriptor
-from src_codes.Color_Histogram.Searcher import Searcher
+from Color_Histogram.ColorDescriptor import ColorDescriptor
+from Color_Histogram.Searcher import Searcher
 import argparse
 import cv2
 
