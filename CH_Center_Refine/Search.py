@@ -10,7 +10,7 @@ from shutil import copy2
 cd = ColorDescriptor([8,12,5])
 
 # load the query image and describe it
-query = cv2.imread("../Images/119.jpg")
+query = cv2.imread("../Images/1367.jpg")
 features = cd.describe(query)
 
 # perform the search

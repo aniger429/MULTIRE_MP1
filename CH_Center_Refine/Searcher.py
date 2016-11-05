@@ -21,6 +21,7 @@ class Searcher:
             # loop over the rows in the index
             for row in reader:
                 features = [float(x) for x in row[1:]]
+
                 d = self.chi2_distance(features, queryFeatures)
                 # d = self.mse(features, queryFeatures)
 
