@@ -1,14 +1,12 @@
 # import the necessary packages
-import numpy as np
 import cv2
 
-
 class ColorDescriptor:
+
     def describe(self, image):
         # convert the image to the HSV color space and initialize
         # the features used to quantify the image
         image = cv2.cvtColor(image, cv2.COLOR_BGR2LUV)
-
 
         features = []
 

@@ -1,21 +1,21 @@
 # import the necessary packages
-from Color_Histogram.ColorDescriptor import ColorDescriptor
-from Color_Histogram.Searcher import Searcher
-import argparse
+from CH_Perceptual import Searcher
 import cv2
 
 from shutil import copy2
 
-# initialize the image descriptor
-cd = ColorDescriptor()
+# # initialize the image descriptor
+# cd = ColorDescriptor()
 
 # load the query image and describe it
 query = cv2.imread("C:/Users/Regina/Documents/Python Workspace/MULTIRE_MP1/Images/119.jpg")
-features = cd.describe(query)
+# features = cd.describe(query)
 
-# perform the search
-searcher = Searcher("C:/Users/Regina/Documents/Python Workspace/MULTIRE_MP1/Color_Histogram/Indexed_Images_CH.csv")
-results = searcher.search(features)
+Searcher(query)
+
+# # # perform the search
+# searcher = Searcher("C:/Users/Regina/Documents/Python Workspace/MULTIRE_MP1/Color_Histogram/Indexed_Images_CH.csv")
+# results = searcher.search(features)
 
 # # display the query
 # cv2.imshow("Query", query)

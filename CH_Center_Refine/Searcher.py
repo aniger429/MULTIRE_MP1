@@ -21,15 +21,8 @@ class Searcher:
             # loop over the rows in the index
             for row in reader:
                 features = [float(x) for x in row[1:]]
-
-                features = np.float32(features)
-                queryFeatures = np.float32(queryFeatures)
-
-
-                # d = self.chi2_distance(features, queryFeatures)
+                d = self.chi2_distance(features, queryFeatures)
                 # d = self.mse(features, queryFeatures)
-                d = cv2.compareHist(features, queryFeatures, 3)
-
 
                 # now that we have the distance between the two feature
                 # vectors, we can udpate the results dictionary -- the

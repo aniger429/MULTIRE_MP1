@@ -1,10 +1,9 @@
 # import the necessary packages
 import argparse
 import glob
-
 import cv2
 
-from Color_Histogram.ColorDescriptor import ColorDescriptor
+from CH_Center_Refine.ColorDescriptor import ColorDescriptor
 
 # # construct the argument parser and parse the arguments
 # ap = argparse.ArgumentParser()
@@ -15,13 +14,13 @@ from Color_Histogram.ColorDescriptor import ColorDescriptor
 # args = vars(ap.parse_args())
 
 # initialize the color descriptor
-cd = ColorDescriptor()
+cd = ColorDescriptor([8,12,5])
 
 # open the output index file for writing
-output = open("Indexed_Images_CH.csv", "w")
+output = open("Indexed_Images_CH_Center_Refine.csv", "w")
 
 # use glob to grab the image paths and loop over them
-for imagePath in glob.glob("C:/Users/Regina/Documents/Python Workspace/MULTIRE_MP1/Images" + "/*.jpg"):
+for imagePath in glob.glob("../Images" + "/*.jpg"):
     # extract the image ID (i.e. the unique filename) from the image
     # path and load the image itself
     imageID = imagePath[imagePath.rfind("/") + 1:]
