@@ -1,21 +1,10 @@
 # import the necessary packages
 import argparse
 import glob
-
 import cv2
+from Fifth.ColorDescriptor import ColorDescriptor
 
-from src_codes.Fifth.ColorDescriptor import ColorDescriptor
-
-# # construct the argument parser and parse the arguments
-# ap = argparse.ArgumentParser()
-# ap.add_argument("-d", "--dataset", required=True,
-#                 help="Path to the directory that contains the images to be indexed")
-# ap.add_argument("-i", "--index", required=True,
-#                 help="Path to where the computed index will be stored")
-# args = vars(ap.parse_args())
-
-# initialize the color descriptor
-cd = ColorDescriptor((8, 12, 3))
+cd = ColorDescriptor((8, 12, 5))
 
 # open the output index file for writing
 output = open("Indexed_Images.csv", "w")
@@ -36,3 +25,5 @@ for imagePath in glob.glob("../Images" + "/*.jpg"):
 
 # close the index file
 output.close()
+
+print ("done")

@@ -7,8 +7,7 @@ class ColorDescriptor:
     def describe(self, image):
         # convert the image to the HSV color space and initialize
         # the features used to quantify the image
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2LUV)
-
+        # image = cv2.cvtColor(image, cv2.COLOR_BGR2LUV)
 
         features = []
 
@@ -25,7 +24,7 @@ class ColorDescriptor:
         # extract a 3D color histogram from the masked region of the
         # image, using the supplied number of bins per channel; then
         # normalize the histogram
-        hist = cv2.calcHist([image], [0, 1, 2], None, [8,12,5], [0, 256, 0, 256, 0, 256])
+        hist = cv2.calcHist([image], [0, 1, 2], None, [8,8,8], [0, 256, 0, 256, 0, 256])
         height, width = image.shape[:2]
         hist = cv2.normalize(hist,hist,alpha=(width*height)).flatten()
 

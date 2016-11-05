@@ -26,9 +26,9 @@ class Searcher:
                 queryFeatures = np.float32(queryFeatures)
 
 
-                # d = self.chi2_distance(features, queryFeatures)
-                # d = self.mse(features, queryFeatures)
-                d = cv2.compareHist(features, queryFeatures, 3)
+                d = self.chi2_distance(features, queryFeatures)
+                # d = self.distance(features, queryFeatures)
+                # d = cv2.compareHist(features, queryFeatures, 3)
 
 
                 # now that we have the distance between the two feature
@@ -55,13 +55,3 @@ class Searcher:
 
         # return the chi-squared distance
         return d
-
-    def mse(self, imageA, imageB):
-        # the 'Mean Squared Error' between the two images is the
-        # sum of the squared difference between the two images;
-        # NOTE: the two images must have the same dimension
-        err = np.sum([((a - b))
-                        for (a, b) in zip(imageA, imageB)])
-        # return the MSE, the lower the error, the more "similar"
-        # the two images are
-        return err

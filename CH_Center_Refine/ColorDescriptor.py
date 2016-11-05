@@ -18,10 +18,20 @@ class ColorDescriptor:
         (h, w) = image.shape[:2]
         (cX, cY) = (int(w * 0.5), int(h * 0.5))
 
-        tX = int(cX / 2)
-        tY = int(cY / 2)
-        bX = int((cX / 2) + cX)
-        bY = int((cY / 2) + cY)
+        # tX = int(cX / 2)
+        # tY = int(cY / 2)
+        # bX = int((cX / 2) + cX)
+        # bY = int((cY / 2) + cY)
+
+        # tX = int((cX / 2) * 1 / 2)
+        # tY = int((cY / 2) * 1 / 2)
+        # bX = int((cX / 2) + cX + cX / 4)
+        # bY = int((cY / 2) + cY + cY / 4)
+
+        tX = int((cX / 3))
+        tY = int((cY / 3))
+        bX = int((cX / 2) + cX + cX / 6)
+        bY = int((cY / 2) + cY + cY / 6)
 
         # construct an elliptical mask representing the center of the
         # image

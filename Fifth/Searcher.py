@@ -1,6 +1,7 @@
 # import the necessary packages
 import numpy as np
 import csv
+import cv2
 
 
 class Searcher:
@@ -8,7 +9,7 @@ class Searcher:
         # store our index path
         self.indexPath = indexPath
 
-    def search(self, queryFeatures, limit=10):
+    def search(self, queryFeatures, limit=20):
         # initialize our dictionary of results
         results = {}
 
@@ -23,7 +24,13 @@ class Searcher:
                 # chi-squared distance between the features in our index
                 # and our query features
                 features = [float(x) for x in row[1:]]
-                d = self.chi2_distance(features, queryFeatures)
+
+                # d = self.chi2_distance(features, queryFeatures)
+
+                features = np.float32(features)
+                queryFeatures = np.float32(queryFeatures)
+
+                d = cv2.compareHist(features, queryFeatures, 3)
 
                 # now that we have the distance between the two feature
                 # vectors, we can udpate the results dictionary -- the
